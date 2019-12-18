@@ -3,29 +3,23 @@ import java.util.*
 fun main(args: Array<String>) {
     println("Hello, ${args[0]}!")
     feedTheFish()
+    swim(50, "slow")
 }
 
-fun dayOfWeek() {
-    println("What day is it today?")
-    val day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
-    println(
-        when (day) {
-            1 -> "Sunday"
-            2 -> "Monday"
-            3 -> "Tuesday"
-            4 -> "Wednesday"
-            5 -> "Thursday"
-            6 -> "Friday"
-            7 -> "Saturday"
-            else -> "Time has stopped"
-        }
-    )
+fun shouldChangeWater(
+    day: String,
+    temperature: Int = 22,
+    dirty: Int = 20
+) {
 }
 
 fun feedTheFish() {
     val day = randomDay()
     val food = fishFood(day)
     println("Today is $day and the fish eat $food")
+    shouldChangeWater(day)
+    shouldChangeWater(day, 20, 30)
+    shouldChangeWater(day, dirty = 50)
 }
 
 fun randomDay(): String {
@@ -44,4 +38,8 @@ fun fishFood(day: String): String {
         "Thursday" -> "plankton"
         else -> "fasting"
     }
+}
+
+fun swim(time: Int, speed: String = "fast") {
+    println("swimming $speed")
 }
