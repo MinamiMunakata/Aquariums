@@ -1,3 +1,5 @@
+package lesson3
+
 fun main(args: Array<String>) {
 //    print("\nYour fortune is: ${getFortuneCookie()}")
     var fortune: String
@@ -28,6 +30,5 @@ fun getFortune(birthday: Int): String {
 
 fun getBirthday(): Int {
     print("Enter your birthday: ")
-    val birthday = readLine()?.toIntOrNull() ?: 1
-    return birthday
+    return readLine()?.toIntOrNull() ?: 1
 }
